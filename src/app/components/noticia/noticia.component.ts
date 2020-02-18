@@ -44,7 +44,6 @@ export class NoticiaComponent implements OnInit {
         cssClass: 'action-dark',
         handler: () => {
           this.datalocalService.guardarNoticia(this.noticia)
-          console.log('Play clicked');
         }
       },{
         text: 'Cancelar',
