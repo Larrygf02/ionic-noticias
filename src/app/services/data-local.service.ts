@@ -22,6 +22,11 @@ export class DataLocalService {
     console.log(this.noticias)
   }
 
+  borrarNoticia (noticia: Article) {
+    this.noticias = this.noticias.filter(noti => noti.title !== noticia.title)
+    this.storage.set('favoritos', this.noticias )
+  }
+
   async cargarFavoritos() {
     const favoritos = await this.storage.get('favoritos')
     this.noticias = favoritos ? favoritos: [];
